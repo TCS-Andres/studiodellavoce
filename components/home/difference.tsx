@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/section-heading";
 import { Media } from "@/components/ui/media";
 import { Icon } from "@/components/ui/icons";
+import { Reveal } from "@/components/ui/reveal";
 
 const props = [
   { icon: Icon.user, title: "Personalized Coaching", body: "Tailored lessons to meet your unique vocal needs and goals." },
@@ -40,11 +41,11 @@ export function Difference() {
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {props.map((p) => {
+            {props.map((p, i) => {
               const I = p.icon;
               return (
-                <div key={p.title} className="flex gap-4">
-                  <div className="inline-flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-white text-purple shadow-sm">
+                <Reveal key={p.title} delay={i * 80} className="group flex gap-4">
+                  <div className="inline-flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-white text-purple shadow-sm transition-all duration-300 group-hover:bg-brand group-hover:text-white group-hover:scale-105">
                     <I className="h-6 w-6" />
                   </div>
                   <div>
@@ -53,7 +54,7 @@ export function Difference() {
                       {p.body}
                     </p>
                   </div>
-                </div>
+                </Reveal>
               );
             })}
           </div>

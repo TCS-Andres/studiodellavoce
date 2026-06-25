@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/section-heading";
 import { Media } from "@/components/ui/media";
+import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/cn";
 
 export type PingPongItem = {
@@ -20,7 +21,7 @@ export function PingPong({ items }: { items: PingPongItem[] }) {
           {items.map((item, i) => {
             const flip = i % 2 === 1;
             return (
-              <div
+              <Reveal
                 key={i}
                 className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16"
               >
@@ -64,7 +65,7 @@ export function PingPong({ items }: { items: PingPongItem[] }) {
                     </div>
                   ) : null}
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>

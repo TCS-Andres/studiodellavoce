@@ -1,4 +1,5 @@
 import { cn } from "@/lib/cn";
+import { Reveal } from "@/components/ui/reveal";
 
 export function Eyebrow({
   children,
@@ -40,7 +41,7 @@ export function SectionHeading({
   bodyClassName?: string;
 }) {
   return (
-    <div
+    <Reveal
       className={cn(
         align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-2xl",
         className
@@ -71,6 +72,6 @@ export function SectionHeading({
           {body}
         </p>
       ) : null}
-    </div>
+    </Reveal>
   );
 }

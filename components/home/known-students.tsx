@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Media } from "@/components/ui/media";
 import { Icon } from "@/components/ui/icons";
+import { Reveal } from "@/components/ui/reveal";
 
 const students = [
   {
@@ -41,20 +42,20 @@ export function KnownStudents() {
         />
 
         <div className="mt-14 grid gap-8 md:grid-cols-2">
-          {students.map((st) => (
-            <div key={st.name} className="flex flex-col">
+          {students.map((st, i) => (
+            <Reveal key={st.name} delay={i * 120} className="flex flex-col">
               <a
                 href={st.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative block"
+                className="group relative block overflow-hidden rounded-[2rem]"
                 aria-label={`Watch ${st.name}`}
               >
                 <Media
                   src={st.image}
                   alt={`${st.name} — performance`}
                   tone="brand"
-                  className="aspect-video w-full"
+                  className="aspect-video w-full transition-transform duration-500 group-hover:scale-[1.04]"
                   rounded="rounded-[2rem]"
                 />
                 <span className="absolute inset-0 flex items-center justify-center">
@@ -72,7 +73,7 @@ export function KnownStudents() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

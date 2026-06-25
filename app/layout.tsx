@@ -39,6 +39,10 @@ export default function RootLayout({
       className={`${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
+        {/* Fallback: if JS is disabled, never hide scroll-reveal content */}
+        <noscript>
+          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

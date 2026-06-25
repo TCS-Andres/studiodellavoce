@@ -43,7 +43,9 @@ export function Testimonials({
           eyebrow={eyebrow}
           title={
             title ?? (
-              <span className="text-heading">Real Voices, Real Transformation</span>
+              <>
+                Real Voices, <span className="text-brand">Real Transformation</span>
+              </>
             )
           }
           body={body}
