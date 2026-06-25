@@ -1,13 +1,12 @@
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Media } from "@/components/ui/media";
-import { Icon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
+import { VideoThumb } from "@/components/ui/video-thumb";
 
 const students = [
   {
     name: "Eiffel 65",
-    href: "https://www.youtube.com/watch?v=AUsAiGtItwA",
+    youtubeId: "AUsAiGtItwA",
     image: "/photos/known-eiffel.jpg",
     points: [
       "Globally renowned Italian electronic group known for the hit “Blue (Da Ba Dee).”",
@@ -17,7 +16,7 @@ const students = [
   },
   {
     name: "Neja",
-    href: "https://www.youtube.com/watch?v=uS-I1jJrxfY",
+    youtubeId: "uS-I1jJrxfY",
     image: "/photos/known-neja.jpg",
     points: [
       "Acclaimed Italian dance and pop artist, known for hits like “Restless” and “Shock!”",
@@ -44,30 +43,15 @@ export function KnownStudents() {
         <div className="mt-14 grid gap-8 md:grid-cols-2">
           {students.map((st, i) => (
             <Reveal key={st.name} delay={i * 120} className="flex flex-col">
-              <a
-                href={st.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group relative block overflow-hidden rounded-[2rem]"
-                aria-label={`Watch ${st.name}`}
-              >
-                <Media
-                  src={st.image}
-                  alt={`${st.name} — performance`}
-                  tone="brand"
-                  className="aspect-video w-full transition-transform duration-500 group-hover:scale-[1.04]"
-                  rounded="rounded-[2rem]"
-                />
-                <span className="absolute inset-0 flex items-center justify-center">
-                  <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-purple shadow-lg transition-transform duration-200 group-hover:scale-110">
-                    <Icon.play className="ml-0.5 h-7 w-7" />
-                  </span>
-                </span>
-              </a>
+              <VideoThumb
+                youtubeId={st.youtubeId}
+                title={st.name}
+                image={st.image}
+              />
               <h3 className="mt-5 text-2xl text-ink">{st.name}</h3>
               <ul className="mt-3 space-y-2">
-                {st.points.map((p, i) => (
-                  <li key={i} className="flex gap-2.5 text-sm leading-relaxed text-muted">
+                {st.points.map((p, j) => (
+                  <li key={j} className="flex gap-2.5 text-sm leading-relaxed text-muted">
                     <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-magenta" />
                     <span>{p}</span>
                   </li>
