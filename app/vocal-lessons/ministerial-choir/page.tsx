@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/sections/page-hero";
 import { CtaBand } from "@/components/sections/cta-band";
 import { StubNote } from "@/components/sections/stub-note";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Ministerial Choir Training",
   description:
     "Dr. Marcella Amoruso's Ministerial Choir Development program enhances the vocal strength, unity and spiritual expression of church choirs.",
-};
+  path: "/vocal-lessons/ministerial-choir",
+});
 
 export default function MinisterialChoirPage() {
   return (

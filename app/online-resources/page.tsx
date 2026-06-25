@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/sections/page-hero";
 import { CtaBand } from "@/components/sections/cta-band";
 import { StubNote } from "@/components/sections/stub-note";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Online Resources",
   description:
     "Vocal growth from anywhere — join our free online community and dive into Dr. Marcella Amoruso's on-demand digital masterclasses.",
-};
+  path: "/online-resources",
+});
 
 export default function OnlineResourcesPage() {
   return (

@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import { pageMetadata, faqLd, courseLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/ui/container";
 import { Eyebrow, SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
@@ -12,11 +13,12 @@ import { CtaBand } from "@/components/sections/cta-band";
 import { Faq, type FaqItem } from "@/components/sections/faq";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Digital Course — Transform Your Voice",
   description:
     "Dr. Marcella Amoruso's digital course: vocal anatomy, breathing, advanced singing methods and more — a complete program to unlock your true vocal potential.",
-};
+  path: "/digital-course",
+});
 
 const guidePoints = [
   "Over 40 years of experience.",
@@ -117,6 +119,8 @@ const faqs: FaqItem[] = [
 export default function DigitalCoursePage() {
   return (
     <>
+      <JsonLd data={courseLd()} />
+      <JsonLd data={faqLd(faqs)} />
       <CourseHero courseUrl={site.courseUrl} />
 
       {/* Guide */}

@@ -3,6 +3,14 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+  siteUrl,
+  siteName,
+  defaultDescription,
+  keywords,
+  organizationLd,
+} from "@/lib/seo";
 
 // Studio della Voce uses Montserrat throughout (per Figma spec).
 const montserrat = Montserrat({
@@ -12,19 +20,45 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+const homeTitle = "Studio della Voce — Voice Restoration & Vocal Transformation";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Studio della Voce — Voice Restoration & Vocal Transformation",
+    default: homeTitle,
     template: "%s · Studio della Voce",
   },
-  description:
-    "Studio della Voce by Dr. Marcella Amoruso helps vocalists overcome mental, technical and physical limitations to discover their most authentic, powerful voice.",
-  metadataBase: new URL("https://studiodellavoce.com"),
+  description: defaultDescription,
+  keywords,
+  applicationName: siteName,
+  authors: [{ name: "Dr. Marcella Amoruso" }],
+  creator: siteName,
+  publisher: siteName,
+  alternates: { canonical: "/" },
+  category: "education",
   openGraph: {
-    title: "Studio della Voce — Voice Restoration & Vocal Transformation",
-    description:
-      "Discover your true voice with Dr. Marcella Amoruso, one of the world's leading experts in vocal mastery.",
     type: "website",
+    siteName,
+    locale: "en_US",
+    url: "/",
+    title: homeTitle,
+    description: defaultDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: homeTitle,
+    description: defaultDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -43,6 +77,7 @@ export default function RootLayout({
         <noscript>
           <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
         </noscript>
+        <JsonLd data={organizationLd} />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

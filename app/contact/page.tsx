@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/sections/page-hero";
 import { ContactForm } from "@/components/contact/contact-form";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contact Us",
   description:
     "Reach out to Studio della Voce — individual lessons, group training, choir development or online resources. We'd love to be part of your vocal journey.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/sections/page-hero";
 import { CtaBand } from "@/components/sections/cta-band";
 import { StubNote } from "@/components/sections/stub-note";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Group Vocal Lessons",
   description:
     "Dynamic, interactive group lessons where singers of all levels grow, learn and inspire each other under the guidance of Dr. Marcella Amoruso.",
-};
+  path: "/vocal-lessons/group",
+});
 
 export default function GroupLessonsPage() {
   return (

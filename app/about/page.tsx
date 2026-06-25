@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/sections/page-hero";
 import { StatsBand } from "@/components/home/stats-band";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Media } from "@/components/ui/media";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About Dr. Marcella Amoruso",
   description:
     "Meet Dr. Marcella Amoruso — the 'Doctor of the Voice' — a renowned vocologist and voice restorer with over 40 years of experience.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

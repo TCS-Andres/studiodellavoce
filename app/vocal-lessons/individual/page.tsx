@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/sections/page-hero";
 import { PingPong, type PingPongItem } from "@/components/sections/ping-pong";
 import { ThePlan } from "@/components/sections/the-plan";
 import { Testimonials } from "@/components/sections/testimonials";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Individual Vocal Lessons",
   description:
     "Focused one-on-one coaching with Dr. Marcella Amoruso, tailored to your unique voice — technique, range, vocal health and artistic expression.",
-};
+  path: "/vocal-lessons/individual",
+});
 
 const items: PingPongItem[] = [
   {
