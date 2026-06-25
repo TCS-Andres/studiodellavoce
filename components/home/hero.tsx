@@ -1,0 +1,55 @@
+import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/section-heading";
+import { Button } from "@/components/ui/button";
+import { Media } from "@/components/ui/media";
+
+export function Hero() {
+  return (
+    <section className="relative -mt-[72px] overflow-hidden pt-[72px]">
+      {/* gradient wash + blobs */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-mist via-cream to-cream" />
+      <div className="pointer-events-none absolute -left-24 top-24 -z-10 h-80 w-80 rounded-full bg-magenta/15 blur-3xl animate-float" />
+      <div className="pointer-events-none absolute right-0 top-0 -z-10 h-96 w-96 rounded-full bg-teal/15 blur-3xl" />
+
+      <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
+        <div>
+          <div className="mb-4">
+            <Eyebrow>Discover Your True Voice</Eyebrow>
+          </div>
+          <h1 className="text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-[3.6rem]">
+            Voice <span className="text-brand">Restoration</span> and Vocal{" "}
+            <span className="text-brand">Transformation</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+            At Studio della Voce by Dr. Marcella Amoruso, we help vocalists —
+            from amateurs to professionals — overcome mental, technical and
+            physical limitations so they can reach their true vocal potential and
+            discover their most authentic, powerful voice.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <Button href="/contact" variant="gradient" size="lg">
+              Schedule Lesson
+            </Button>
+            <Button href="/about" variant="outline" size="lg">
+              Meet Dr. Marcella
+            </Button>
+          </div>
+        </div>
+
+        <div className="relative">
+          <Media
+            label="Dr. Marcella with a student"
+            tone="brand"
+            className="aspect-[4/5] w-full"
+            rounded="rounded-[2.5rem]"
+          />
+          {/* floating accent card */}
+          <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-white px-5 py-4 shadow-[0_24px_60px_-30px_rgba(42,21,56,0.5)] sm:block">
+            <p className="font-display text-2xl font-bold text-brand">40+ yrs</p>
+            <p className="text-xs text-muted">of vocal mastery</p>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}

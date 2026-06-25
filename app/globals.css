@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Brand palette (derived from Figma mockup + GRADIENT 1) ---- */
+  --color-ink: #2a1538;        /* deepest purple — footer + headings */
+  --color-plum: #3d2152;       /* deep purple */
+  --color-purple: #5e2e92;     /* primary brand purple */
+  --color-purple-2: #6b3fa0;   /* purple (buttons) */
+  --color-violet: #7b4bb8;
+  --color-magenta: #b4348a;    /* pink/magenta accent (emphasis) */
+  --color-pink: #d24f9a;
+  --color-teal: #2fa6c9;       /* teal accent */
+  --color-aqua: #56c4d8;
+  --color-leaf: #7ac143;       /* green (logo) */
+  --color-coral: #e3895f;      /* coral / warm accent */
+  --color-gold: #e6b15e;
+
+  --color-cream: #fbf9fc;      /* off-white page tint */
+  --color-mist: #f4eef9;       /* light lavender section bg */
+  --color-line: #ece4f3;       /* hairline borders */
+  --color-muted: #6b6072;      /* muted body text */
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
+
+  --radius-card: 1.75rem;
+  --radius-pill: 999px;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #2a1538;
+  /* Signature brand gradient — indigo → purple → magenta → coral → teal */
+  --brand-gradient: linear-gradient(
+    115deg,
+    #34286a 0%,
+    #5e2e92 20%,
+    #9b3690 42%,
+    #d76f8a 58%,
+    #e0a35f 74%,
+    #46b0c9 100%
+  );
+  --brand-gradient-soft: linear-gradient(
+    115deg,
+    #4a327f 0%,
+    #7b3f9e 35%,
+    #b4348a 65%,
+    #3fa3c4 100%
+  );
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display), var(--font-sans), sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-magenta) 22%, transparent);
+    color: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  /* Signature gradient fills */
+  .bg-brand {
+    background-image: var(--brand-gradient);
+  }
+  .bg-brand-soft {
+    background-image: var(--brand-gradient-soft);
+  }
+  /* Gradient text */
+  .text-brand {
+    background-image: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Section helpers */
+  .container-x {
+    width: 100%;
+    max-width: 80rem; /* 1280px */
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 1024px) {
+    .container-x { padding-inline: 2.5rem; }
+  }
+  /* Marquee animation */
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  /* Subtle float for decorative blobs */
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+}
