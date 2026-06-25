@@ -63,7 +63,7 @@ export function CourseModules({ courseUrl }: { courseUrl: string }) {
         </div>
 
         <div className="mt-12 text-center">
-          <Button href={courseUrl} variant="gradient" size="lg">
+          <Button href={courseUrl} variant="gold" size="lg">
             Access the Full Course Now
           </Button>
         </div>

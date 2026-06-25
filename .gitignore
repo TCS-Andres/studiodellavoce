@@ -41,5 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 # large raw source assets / internal design reference (not needed to build the site)
-/GRADIENT 1.png
-/_design-reference/
+**/GRADIENT 1.png
+**/_design-reference/
+**/Figma Files/
+**/_extracted/

@@ -12,8 +12,8 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        "inline-block text-xs font-semibold uppercase tracking-[0.22em] font-display",
-        light ? "text-white/70" : "text-magenta",
+        "inline-block text-xs font-bold uppercase tracking-[0.22em] font-display",
+        light ? "text-white/70" : "text-indigo",
         className
       )}
     >

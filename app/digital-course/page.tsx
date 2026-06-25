@@ -123,7 +123,8 @@ export default function DigitalCoursePage() {
       <section className="py-20 sm:py-28">
         <Container className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <Media
-            label="Dr. Marcella Amoruso"
+            src="/photos/marcella-profile.jpg"
+            alt="Dr. Marcella Amoruso"
             tone="brand"
             className="aspect-[4/5] w-full"
             rounded="rounded-[2.5rem]"
@@ -147,7 +148,7 @@ export default function DigitalCoursePage() {
               ))}
             </ul>
             <div className="mt-9">
-              <Button href={site.courseUrl} variant="gradient" size="lg">
+              <Button href={site.courseUrl} variant="gold" size="lg">
                 Access the Course!
               </Button>
             </div>

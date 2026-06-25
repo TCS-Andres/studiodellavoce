@@ -2,9 +2,9 @@ import Image from "next/image";
 import { cn } from "@/lib/cn";
 
 /**
- * Media placeholder. When `src` is provided it renders a real optimized image;
- * otherwise it shows a tasteful branded stand-in. Swap real photography in by
- * passing `src` (drop files into /public/photos).
+ * Media: renders a real optimized image when `src` is given, else a branded
+ * placeholder. Use `fit="contain"` for transparent cutout subjects (e.g. the
+ * hero singers / Dr. Marcella) so they sit on the brand gradient like Figma.
  */
 export function Media({
   src,
@@ -13,6 +13,9 @@ export function Media({
   className,
   rounded = "rounded-card",
   tone = "soft",
+  fit = "cover",
+  position = "object-center",
+  priority = false,
 }: {
   src?: string;
   alt?: string;
@@ -20,6 +23,9 @@ export function Media({
   className?: string;
   rounded?: string;
   tone?: "soft" | "brand" | "mist";
+  fit?: "cover" | "contain";
+  position?: string;
+  priority?: boolean;
 }) {
   const toneCls =
     tone === "brand"
@@ -29,13 +35,25 @@ export function Media({
         : "bg-brand-soft";
 
   if (src) {
+    const contain = fit === "contain";
     return (
-      <div className={cn("relative overflow-hidden", rounded, className)}>
+      <div
+        className={cn(
+          "relative overflow-hidden",
+          rounded,
+          contain && toneCls,
+          className
+        )}
+      >
+        {contain ? (
+          <div className="pointer-events-none absolute -top-1/4 right-0 h-2/3 w-2/3 rounded-full bg-white/15 blur-3xl" />
+        ) : null}
         <Image
           src={src}
           alt={alt ?? label ?? ""}
           fill
-          className="object-cover"
+          priority={priority}
+          className={cn(contain ? "object-contain" : "object-cover", position)}
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
@@ -53,7 +71,6 @@ export function Media({
       aria-label={label ?? alt}
       role="img"
     >
-      {/* soft light bloom */}
       <div className="pointer-events-none absolute -top-1/3 -right-1/4 h-2/3 w-2/3 rounded-full bg-white/20 blur-3xl" />
       <div className="relative flex flex-col items-center gap-2 px-6 text-center text-white/85">
         <svg

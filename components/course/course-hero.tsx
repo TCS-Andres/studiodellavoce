@@ -41,7 +41,7 @@ export function CourseHero({ courseUrl }: { courseUrl: string }) {
         </div>
 
         <div className="mt-10 text-center">
-          <Button href={courseUrl} variant="white" size="lg">
+          <Button href={courseUrl} variant="gold" size="lg">
             Access the Course!
           </Button>
         </div>

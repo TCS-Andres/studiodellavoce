@@ -7,6 +7,7 @@ const students = [
   {
     name: "Eiffel 65",
     href: "https://www.youtube.com/watch?v=AUsAiGtItwA",
+    image: "/photos/known-eiffel.jpg",
     points: [
       "Globally renowned Italian electronic group known for the hit “Blue (Da Ba Dee).”",
       "Achieved international success and multiple awards, including a Grammy nomination.",
@@ -16,6 +17,7 @@ const students = [
   {
     name: "Neja",
     href: "https://www.youtube.com/watch?v=uS-I1jJrxfY",
+    image: "/photos/known-neja.jpg",
     points: [
       "Acclaimed Italian dance and pop artist, known for hits like “Restless” and “Shock!”",
       "Has topped charts across Europe and performed on major international stages.",
@@ -49,7 +51,8 @@ export function KnownStudents() {
                 aria-label={`Watch ${st.name}`}
               >
                 <Media
-                  label={`${st.name} — performance`}
+                  src={st.image}
+                  alt={`${st.name} — performance`}
                   tone="brand"
                   className="aspect-video w-full"
                   rounded="rounded-[2rem]"

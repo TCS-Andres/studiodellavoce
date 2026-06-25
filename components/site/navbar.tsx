@@ -93,7 +93,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="/contact" variant="gradient" size="sm">
+          <Button href="/contact" variant="gold" size="sm">
             Schedule Lesson
           </Button>
         </div>
@@ -169,7 +169,7 @@ export function Navbar() {
               )
             )}
             <div className="p-3">
-              <Button href="/contact" variant="gradient" className="w-full">
+              <Button href="/contact" variant="gold" className="w-full">
                 Schedule Lesson
               </Button>
             </div>

@@ -43,9 +43,7 @@ export function Testimonials({
           eyebrow={eyebrow}
           title={
             title ?? (
-              <>
-                Real Voices, <span className="text-brand">Real Transformation</span>
-              </>
+              <span className="text-heading">Real Voices, Real Transformation</span>
             )
           }
           body={body}
@@ -60,14 +58,14 @@ export function Testimonials({
               &ldquo;
             </span>
             <blockquote className="relative">
-              <p className="text-balance text-lg font-medium italic leading-relaxed text-plum sm:text-xl">
+              <p className="text-balance text-lg font-semibold italic leading-relaxed text-brand sm:text-xl">
                 {active.quote}
               </p>
-              <div className="mx-auto mt-7 h-px w-40 bg-line" />
+              <div className="mx-auto mt-7 h-px w-40 bg-slate/40" />
               <footer className="mt-5 text-base">
-                <span className="font-semibold text-ink">{active.name}</span>
+                <span className="font-bold text-slate">{active.name}</span>
                 {active.role ? (
-                  <span className="text-muted"> | {active.role}</span>
+                  <span className="text-slate/70"> | {active.role}</span>
                 ) : null}
               </footer>
             </blockquote>

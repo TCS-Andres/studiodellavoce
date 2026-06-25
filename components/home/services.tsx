@@ -59,7 +59,7 @@ export function Services() {
                 <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-mist text-purple transition-colors group-hover:bg-brand group-hover:text-white">
                   <I className="h-7 w-7" />
                 </div>
-                <h3 className="text-xl text-ink">{sv.title}</h3>
+                <h3 className="text-xl text-indigo">{sv.title}</h3>
                 <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted">
                   {sv.body}
                 </p>

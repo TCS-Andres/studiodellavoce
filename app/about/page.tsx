@@ -27,8 +27,11 @@ export default function AboutPage() {
       <section className="py-20 sm:py-28">
         <Container className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <Media
-            label="Dr. Marcella Amoruso"
+            src="/photos/marcella.png"
+            alt="Dr. Marcella Amoruso"
             tone="brand"
+            fit="contain"
+            position="object-bottom"
             className="aspect-[4/5] w-full"
             rounded="rounded-[2.5rem]"
           />

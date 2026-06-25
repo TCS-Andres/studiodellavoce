@@ -16,11 +16,14 @@ export function Difference() {
   return (
     <section className="bg-mist py-20 sm:py-28">
       <Container className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-        <div className="relative">
+        <div className="relative lg:sticky lg:top-24 lg:self-start">
           <Media
-            label="Dr. Marcella Amoruso"
+            src="/photos/marcella.png"
+            alt="Dr. Marcella Amoruso"
             tone="brand"
-            className="aspect-[4/5] w-full lg:sticky lg:top-24"
+            fit="contain"
+            position="object-bottom"
+            className="aspect-[4/5] w-full"
             rounded="rounded-[2.5rem]"
           />
         </div>

@@ -24,13 +24,14 @@ export function CoursePromo() {
                 vocal anatomy to advanced singing methods, all from home.
               </p>
               <div className="mt-8">
-                <Button href={site.courseUrl} variant="white" size="lg">
+                <Button href={site.courseUrl} variant="gold" size="lg">
                   Enroll Now and Begin Your Journey
                 </Button>
               </div>
             </div>
             <Media
-              label="Digital course preview"
+              src="/photos/course-laptop.jpg"
+              alt="Digital course preview"
               tone="mist"
               className="aspect-video w-full"
               rounded="rounded-[1.75rem]"

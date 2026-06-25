@@ -4,7 +4,7 @@ import { Media } from "@/components/ui/media";
 
 export function MiniAbout() {
   return (
-    <section className="bg-ink py-20 text-white sm:py-28">
+    <section className="bg-plum py-20 text-white sm:py-28">
       <Container className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/60 font-display">
@@ -31,14 +31,15 @@ export function MiniAbout() {
             Dr. Marcella Amoruso
           </p>
           <div className="mt-8">
-            <Button href="/about" variant="white" size="lg">
+            <Button href="/about" variant="gold" size="lg">
               Learn About Dr. Marcella
             </Button>
           </div>
         </div>
 
         <Media
-          label="Dr. Marcella Amoruso"
+          src="/photos/marcella-profile.jpg"
+          alt="Dr. Marcella Amoruso"
           tone="brand"
           className="aspect-[4/5] w-full"
           rounded="rounded-[2.5rem]"

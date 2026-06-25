@@ -34,7 +34,7 @@ export function ValueStack() {
                 <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand text-white">
                   <I className="h-7 w-7" />
                 </div>
-                <h3 className="text-xl text-ink">{v.title}</h3>
+                <h3 className="text-xl text-indigo">{v.title}</h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-muted">
                   {v.body}
                 </p>

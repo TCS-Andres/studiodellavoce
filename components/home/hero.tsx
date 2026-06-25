@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
 import { Media } from "@/components/ui/media";
 
@@ -13,12 +12,11 @@ export function Hero() {
 
       <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
         <div>
-          <div className="mb-4">
-            <Eyebrow>Discover Your True Voice</Eyebrow>
-          </div>
-          <h1 className="text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-[3.6rem]">
-            Voice <span className="text-brand">Restoration</span> and Vocal{" "}
-            <span className="text-brand">Transformation</span>
+          <p className="mb-4 text-lg uppercase tracking-[0.04em] text-ink/90 sm:text-xl [font-variant:all-small-caps]">
+            Discover Your True Voice
+          </p>
+          <h1 className="text-4xl font-medium leading-[1.08] text-ink sm:text-5xl lg:text-[3.9rem] lg:leading-[1.18]">
+            Voice Restoration and Vocal Transformation
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             At Studio della Voce by Dr. Marcella Amoruso, we help vocalists —
@@ -27,7 +25,7 @@ export function Hero() {
             discover their most authentic, powerful voice.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
-            <Button href="/contact" variant="gradient" size="lg">
+            <Button href="/contact" variant="primary" size="lg">
               Schedule Lesson
             </Button>
             <Button href="/about" variant="outline" size="lg">
@@ -38,8 +36,12 @@ export function Hero() {
 
         <div className="relative">
           <Media
-            label="Dr. Marcella with a student"
+            src="/photos/hero-singers.png"
+            alt="Two vocalists performing"
             tone="brand"
+            fit="contain"
+            position="object-bottom"
+            priority
             className="aspect-[4/5] w-full"
             rounded="rounded-[2.5rem]"
           />

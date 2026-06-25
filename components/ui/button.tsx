@@ -1,22 +1,26 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "gradient" | "outline" | "white" | "ghost";
+type Variant = "primary" | "gold" | "gradient" | "outline" | "white" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-pill font-medium font-display transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-magenta/50 focus-visible:ring-offset-2 disabled:opacity-60";
+  "inline-flex items-center justify-center gap-2 rounded-pill font-semibold font-display transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2 disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
+  // Gold is the primary brand CTA (nav, course, mini-about) per Figma.
+  gold:
+    "bg-gold text-white shadow-[0_12px_30px_-12px_rgba(216,171,75,0.75)] hover:brightness-105 hover:-translate-y-0.5",
+  // Solid purple CTA (hero, general).
   primary:
-    "bg-purple text-white shadow-[0_10px_30px_-12px_rgba(94,46,146,0.7)] hover:bg-purple-2 hover:-translate-y-0.5",
+    "bg-purple text-white shadow-[0_10px_30px_-12px_rgba(124,6,156,0.65)] hover:brightness-110 hover:-translate-y-0.5",
   gradient:
     "bg-brand text-white shadow-[0_12px_34px_-12px_rgba(148,52,138,0.65)] hover:-translate-y-0.5 hover:brightness-105",
   outline:
-    "border border-purple/30 text-purple bg-white/60 hover:bg-purple hover:text-white hover:border-purple",
+    "border border-purple/35 text-purple bg-white/70 hover:bg-purple hover:text-white hover:border-purple",
   white:
     "bg-white text-purple shadow-[0_10px_30px_-14px_rgba(0,0,0,0.4)] hover:-translate-y-0.5",
-  ghost: "text-purple hover:text-magenta",
+  ghost: "text-purple hover:text-purple-deep",
 };
 
 const sizes: Record<Size, string> = {

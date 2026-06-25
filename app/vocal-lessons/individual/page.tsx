@@ -21,6 +21,7 @@ const items: PingPongItem[] = [
       "Ongoing feedback and adjustments to optimize your progress.",
     ],
     imageLabel: "One-on-one lesson",
+    imageSrc: "/photos/lessons-1.jpg",
   },
   {
     eyebrow: "Overcome Barriers",
@@ -32,6 +33,7 @@ const items: PingPongItem[] = [
       "Gain confidence to perform and express yourself authentically.",
     ],
     imageLabel: "Breakthrough coaching",
+    imageSrc: "/photos/lessons-2.jpg",
   },
   {
     eyebrow: "Vocal Health and Longevity",
@@ -43,6 +45,7 @@ const items: PingPongItem[] = [
       "How to maintain vocal health for a lifetime of singing.",
     ],
     imageLabel: "Vocal health",
+    imageSrc: "/photos/lessons-3.jpg",
   },
   {
     eyebrow: "Artistic Development & Expression",
@@ -54,6 +57,7 @@ const items: PingPongItem[] = [
       "Build the confidence to perform with passion and creativity.",
     ],
     imageLabel: "Artistic expression",
+    imageSrc: "/photos/lessons-4.jpg",
   },
   {
     eyebrow: "Flexible Learning Options",
@@ -65,6 +69,7 @@ const items: PingPongItem[] = [
       "Flexible scheduling to accommodate your needs.",
     ],
     imageLabel: "In-person or online",
+    imageSrc: "/photos/lessons-5.jpg",
   },
 ];
 
