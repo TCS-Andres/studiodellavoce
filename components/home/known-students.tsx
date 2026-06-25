@@ -7,7 +7,7 @@ const students = [
   {
     name: "Eiffel 65",
     youtubeId: "AUsAiGtItwA",
-    image: "/photos/known-eiffel.jpg",
+    image: "/photos/eiffel-65.jpg",
     points: [
       "Globally renowned Italian electronic group known for the hit “Blue (Da Ba Dee).”",
       "Achieved international success and multiple awards, including a Grammy nomination.",
@@ -17,7 +17,7 @@ const students = [
   {
     name: "Neja",
     youtubeId: "uS-I1jJrxfY",
-    image: "/photos/known-neja.jpg",
+    image: "/photos/neja.jpg",
     points: [
       "Acclaimed Italian dance and pop artist, known for hits like “Restless” and “Shock!”",
       "Has topped charts across Europe and performed on major international stages.",

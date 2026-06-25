@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Media } from "@/components/ui/media";
 import { Icon } from "@/components/ui/icons";
 import { cn } from "@/lib/cn";
@@ -22,7 +23,10 @@ export function VideoThumb({
   rounded?: string;
 }) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!open) return;
@@ -71,7 +75,7 @@ export function VideoThumb({
         </span>
       </button>
 
-      {open ? (
+      {open && mounted ? createPortal(
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/85 p-4 backdrop-blur-sm"
           onClick={() => setOpen(false)}
@@ -104,7 +108,8 @@ export function VideoThumb({
               />
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       ) : null}
     </>
   );
