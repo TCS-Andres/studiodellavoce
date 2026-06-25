@@ -30,12 +30,19 @@ export function VideoThumb({
       if (e.key === "Escape") setOpen(false);
     };
     document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    // This layout scrolls on <html>, so lock/restore there (and body) to
+    // freeze the background while the lightbox is open — then release it.
+    const html = document.documentElement;
+    const body = document.body;
+    const prevHtml = html.style.overflow;
+    const prevBody = body.style.overflow;
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
     closeRef.current?.focus();
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
+      html.style.overflow = prevHtml;
+      body.style.overflow = prevBody;
     };
   }, [open]);
 
